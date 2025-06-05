@@ -5,12 +5,9 @@ const Border = () => {
 
     const [tapFlag, setTapFlag] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
-    console.log(squares);
-
 
     const changeClick = (i)=> {
-        
-        console.log(i);
+
         if (squares[i] || winnersMatch(squares)) {
             return;
         }
@@ -55,6 +52,11 @@ const Border = () => {
         status = "Next player: " + (tapFlag ? "X" : "O");
     }
 
+    const onRefresh = () => {
+        setTapFlag(true); 
+        setSquares(Array(9).fill(null));
+    }
+
     return(
         <div className="table"> 
              <h1 className="text-5xl font-bold mb-8">TIC-TAC-TOE GAME</h1>
@@ -75,9 +77,8 @@ const Border = () => {
                     <Button text={squares[7]} onPress={() => changeClick(7)} />
                     <Button text={squares[8]} onPress={() =>changeClick(8)} />
                 </div>
-
             </div>
-
+            <button className= "rounded-full bg-cyan-300 ring-2 ring-black text-black w-40 h-8 m-8" onClick={onRefresh}>Play Again</button>
         </div>
     );
 }
