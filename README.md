@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description 
+
+This is a simple tic-tac-toe game built with React and Tailwindcss.
+
+It can be played by 2 players (X and O).
+
+It is always indicated which player has a turn to play and the winner at the end of the game.
+
+When they finish the game they can press the "Play Again" button to restart the game.
+
 ## Available Scripts
 
 In the project directory, you can run:
